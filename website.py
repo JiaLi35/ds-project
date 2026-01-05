@@ -47,8 +47,11 @@ if page == 'Prediction Model':
                         
                     confidence = pred[pred_class_idx] * 100
                     pred_label = class_names[pred_class_idx]
-                    
-                    st.success(f"Skin Lesion Type: {pred_label}, {confidence:.2f}% confident")
+
+                    if pred_label == 'Benign keratosis-like lesions' or pred_label == 'Dermatofibroma' or pred_label == 'Melanocytic nevi':
+                        st.success(f"Skin Lesion Type: {pred_label}, {confidence:.2f}% confident")
+                    else: 
+                        st.error(f"Skin Lesion Type: {pred_label}, {confidence:.2f}% confident")
 
                     # Probability chart
                     df_pred = pd.DataFrame({

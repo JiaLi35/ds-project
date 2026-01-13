@@ -1,8 +1,7 @@
-streamlit
-tensorflow==2.12.0
-numpy==1.26.4
+sstreamlit
+tensorflow==2.20.0
+numpy
 pandas
 scikit-learn
 plotly
 Pillow
-opencv-python-headless
